@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+   <center>
+    {% load crispy_forms_tags %}  
+    <form action="" method="post">
+        {% csrf_token %}
+                {{kiyim|crispy}}
+                <button class="btn btn-primary my-4" type="submit">Submit</button>
+    </form>
+   </center>
+    <center>
+        <table border="1">
+           
+                {% for i in data %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.nomi}}</td>
+                    <td>{{i.turi}}</td>
+                    <td>{{i.ulcham}}</td>
+                    <td>{{i.narxi}}</td>
+                </tr>
+                {% endfor %}
+           
+        </table>
+    </center>
+    
+
+
+{% endblock content %}
